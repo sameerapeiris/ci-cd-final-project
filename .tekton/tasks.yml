@@ -5,7 +5,7 @@ metadata:
   name: cleanup
 spec:
   description: This task will cleanup a worksapce by deleting all the files.
-  workspaces: 
+  workspaces:
     - name: source
   steps:
     - name: remove
@@ -25,7 +25,7 @@ spec:
           #
           # we don't just "rm -rf ${WORKSPACE_SOURCE_PATH}" because ${WORKSPACE_SOURCE_PATH} might be "/"
           # or the root of mounted volume
-          if [ -d "${WORKSPACE_SOURCE_PATH}"] ; then
+          if [ -d "${WORKSPACE_SOURCE_PATH}" ] ; then
             # Delete non-hidden files and directories
             rm -rf "${WORKSPACE_SOURCE_PATH:?}"/*
             # Delete files and directories starting with . but excluding ..
