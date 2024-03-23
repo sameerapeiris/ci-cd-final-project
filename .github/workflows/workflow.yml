@@ -23,7 +23,8 @@ jobs:
           run: 
             pip install flake8
             flake8
-        - name: Run unit test with nose
+        - name: Run install nose
           run: 
             pip install nose
-            nosetests 
+        - name: RUn unit test with nose
+          run: nosetests
